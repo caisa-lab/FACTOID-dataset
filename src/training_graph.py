@@ -8,7 +8,7 @@ import time
 import gzip
 import numpy as np
 import torch.optim as optim
-from data_collection.reddit_user_dataset import RedditUserDataset
+from dataset.reddit_user_dataset import RedditUserDataset
 
 from argparse import ArgumentParser
 import datetime

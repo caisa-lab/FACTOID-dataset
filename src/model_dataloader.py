@@ -204,15 +204,11 @@ if __name__ == '__main__':
         print(start_frame + train_window)
         sample_frames = sample_frames[start_frame:start_frame + train_window]
         
-        if source_graph_descriptor['graph_type'] == 'linguistic':
-            sample_frames = [
-                tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
-                _, tf in
-                enumerate(sample_frames)]
-        elif source_graph_descriptor['graph_type'] == 'social':
-            sample_frames = [
-                tf.data_frame for tf in sample_frames
-            ]
+        sample_frames = [
+            tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
+            _, tf in
+            enumerate(sample_frames)]
+
         
         sample = convert_timeframes_to_model_input(sample_frames, {k: v[start_frame:start_frame + train_window] for k, v in
                                                                 precomputed_features.items()}, ground_truth, dim)
@@ -236,13 +232,10 @@ if __name__ == '__main__':
 
         sample_frames = sample_frames[start_frame:start_frame + val_window]
 
-        if source_graph_descriptor['graph_type'] == 'linguistic':
-            sample_frames = [
-                tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
-                index, tf in
-                enumerate(sample_frames)]
-        elif source_graph_descriptor['graph_type'] == 'social':
-            sample_frames = [tf.data_frame for tf in sample_frames]
+        sample_frames = [
+            tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
+            index, tf in
+            enumerate(sample_frames)]
 
         sample = convert_timeframes_to_model_input(sample_frames, {k: v[start_frame:start_frame + val_window] for k, v in
                                                                 precomputed_features.items()}, ground_truth, dim)
@@ -265,13 +258,11 @@ if __name__ == '__main__':
         print(start_frame)
         print(start_frame + test_window)
         sample_frames = sample_frames[start_frame:]
-        if source_graph_descriptor['graph_type'] == 'linguistic':
-            sample_frames = [
-                tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
-                index, tf in
-                enumerate(sample_frames)]
-        elif source_graph_descriptor['graph_type'] == 'social':
-            sample_frames = [tf.data_frame for tf in sample_frames]
+        sample_frames = [
+            tf.build_graph_column_precomputed(threshold=threshold, percentage=percentage, inplace=False).data_frame for
+            index, tf in
+            enumerate(sample_frames)]
+    
             
         sample = convert_timeframes_to_model_input(sample_frames, {k: v[start_frame:] for k, v in
                                                                 precomputed_features.items()}, ground_truth, dim)
