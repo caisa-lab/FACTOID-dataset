@@ -72,20 +72,20 @@ FACTOID: a user-level **FAC**tuality and p**O**litical b**I**as **D**ataset, tha
 
 ### 3.4 Training Model
 
-    After training, validation, test samples are created, run the model using the following
+  After training, validation, test samples are created, run the model using the following
 
-    ```
-    python training_graph.py --patience=40 \
-    --run_id='bert_embeddings' \
-    --sample_dir='../data/reddit_dataset/model_samples_avg/bert_embeddings/'  \
-    --result_dir='../results/' \
-    --checkpoint_dir='../results/checkpoints/' \
-    --max_epochs=50 \
-    --learning_rate=5e-5 \
-    --nheads=4 \
-    --dropout=0.2 \
-    --nhid_graph=256 \
-    --nhid=128 \
-    --users_dim=768 \
-    --gnn='gat' |& tee ../logs/graph_model_main.txt
-    ```
+  ```
+  python training_graph.py --patience=40 \
+  --run_id='bert_embeddings' \
+  --sample_dir='../data/reddit_dataset/model_samples_avg/bert_embeddings/'  \
+  --result_dir='../results/' \
+  --checkpoint_dir='../results/checkpoints/' \
+  --max_epochs=50 \
+  --learning_rate=5e-5 \
+  --nheads=4 \
+  --dropout=0.2 \
+  --nhid_graph=256 \
+  --nhid=128 \
+  --users_dim=768 \
+  --gnn='gat' |& tee ../logs/graph_model_main.txt
+  ```
