@@ -1,5 +1,5 @@
-from classification.feature_computing import *
-from data_collection.reddit_user_dataset import RedditUserDataset
+from utils.feature_computing import *
+from dataset.reddit_user_dataset import RedditUserDataset
 import os
 import pickle as pkl
 from argparse import ArgumentParser

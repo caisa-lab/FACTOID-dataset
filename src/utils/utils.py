@@ -36,3 +36,10 @@ def convert_value(value):
         return [convert_value(val) for val in value]
     else:
         return str(value)
+
+
+def read_userids(filename, root):
+    ids = None
+    with open(os.path.join(root, filename), 'r') as f: 
+        ids = [str(line.strip()) for line in f]
+    return ids

@@ -1,4 +1,4 @@
-from data_collection.reddit_user_dataset import RedditUserDataset
+from dataset.reddit_user_dataset import RedditUserDataset
 import datetime
 from argparse import ArgumentParser
 import os

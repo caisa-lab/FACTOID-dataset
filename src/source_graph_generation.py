@@ -1,5 +1,5 @@
-from data_collection.reddit_user_dataset import RedditUserDataset
-from classification.feature_computing import Embedder
+from dataset.reddit_user_dataset import RedditUserDataset
+from utils.feature_computing import Embedder
 from utils.file_sort import path_sort
 import os
 import datetime

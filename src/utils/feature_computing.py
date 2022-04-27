@@ -3,9 +3,11 @@ import pickle as pkl
 import glob
 import pandas as pd
 import os
+import torch
+
 
 """
-This class bundles the different methodologies for feature vector calculation. 
+This class bundles the different methodologies for extracting embeddings
 """
 class Embedder:
     def __init__(self, embeddings_dir, embeddings_type='bert', dim=768, read_personality=True) -> None:
